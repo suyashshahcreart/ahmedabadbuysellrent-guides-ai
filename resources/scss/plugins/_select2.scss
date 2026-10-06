@@ -1,0 +1,124 @@
+//
+// Select2 — Bootstrap 5 alignment for master module dropdowns
+// !important used because select2.min.css loads after app.scss via app.js bundle.
+//
+
+@mixin master-select2-single($height, $font-size, $padding-x) {
+    .select2-selection--single {
+        position: relative !important;
+        box-sizing: border-box !important;
+        min-height: $height !important;
+        height: $height !important;
+        display: flex !important;
+        align-items: center !important;
+        font-size: $font-size !important;
+        line-height: normal !important;
+        border: $input-border-width solid $input-border-color !important;
+        border-radius: $input-border-radius !important;
+        background-color: $input-bg !important;
+        background-image: none !important;
+        padding: 0 !important;
+
+        .select2-selection__rendered {
+            display: block !important;
+            line-height: $input-line-height !important;
+            padding: 0 $padding-x !important;
+            padding-right: 2rem !important;
+            color: $input-color !important;
+            width: 100% !important;
+        }
+
+        .select2-selection__placeholder {
+            color: $input-placeholder-color !important;
+        }
+
+        .select2-selection__arrow {
+            position: absolute !important;
+            top: 50% !important;
+            right: $padding-x !important;
+            transform: translateY(-50%) !important;
+            height: 1rem !important;
+            width: 1rem !important;
+
+            b {
+                margin-top: 0 !important;
+            }
+        }
+    }
+
+    &.select2-container--focus .select2-selection--single,
+    &.select2-container--open .select2-selection--single {
+        border-color: $input-focus-border-color !important;
+        box-shadow: $input-focus-box-shadow !important;
+    }
+}
+
+.select2-container {
+    width: 100% !important;
+    display: block;
+}
+
+.select2-container--default {
+    @include master-select2-single($input-height, $input-font-size, $input-padding-x);
+
+    .select2-selection--single.select2-selection-sm {
+        min-height: $input-height-sm !important;
+        height: $input-height-sm !important;
+        font-size: $input-font-size-sm !important;
+
+        .select2-selection__rendered {
+            padding-left: $input-padding-x-sm !important;
+            padding-right: 1.75rem !important;
+        }
+
+        .select2-selection__arrow {
+            right: $input-padding-x-sm !important;
+        }
+    }
+}
+
+.select2-dropdown {
+    border: $input-border-width solid $input-border-color;
+    border-radius: $input-border-radius;
+    box-shadow: $box-shadow;
+    z-index: 1060;
+}
+
+.select2-search--dropdown .select2-search__field {
+    border: $input-border-width solid $input-border-color;
+    border-radius: $input-border-radius;
+    padding: $input-padding-y $input-padding-x;
+    outline: 0;
+
+    &:focus {
+        border-color: $input-focus-border-color;
+        box-shadow: $input-focus-box-shadow;
+    }
+}
+
+.select2-results__option {
+    padding: 0.45rem $input-padding-x;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: $primary;
+    color: $white;
+}
+
+#master-list-filters,
+#blog-post-filters,
+#case-study-filters {
+    .select2-container--default {
+        @include master-select2-single($input-height-sm, $input-font-size-sm, $input-padding-x-sm);
+    }
+}
+
+#master-list-filters {
+    #master-list-filters-reset {
+        min-height: $input-height-sm;
+        display: inline-flex;
+        align-items: center;
+        padding-top: $input-padding-y-sm;
+        padding-bottom: $input-padding-y-sm;
+    }
+}

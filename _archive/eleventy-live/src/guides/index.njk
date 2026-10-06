@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: All property guides
+description: "Complete list of Ahmedabad property guides: buying, renting, selling, area reviews, and locality comparisons."
+canonical: /guides/
+---
+<section class="hero hero-compact">
+  <div class="container">
+    <p class="eyebrow">All guides</p>
+    <h1>Every property guide for Ahmedabad</h1>
+    <p class="lede">Browse by topic or search.</p>
+    <div class="search-box">
+      <form action="/search/" method="get" role="search">
+        <input name="q" type="search" placeholder="Search guides…" aria-label="Search guides">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container" data-filter-root>
+    <div class="filters" data-filters>
+      <button type="button" class="is-on" data-group="all">All</button>
+      {% for cat in categories %}
+      <button type="button" data-group="{{ cat.slug }}">{{ cat.nav }}</button>
+      {% endfor %}
+    </div>
+    <p data-search-empty hidden class="empty-copy">No guides match your search.</p>
+    <div class="card-grid cols-3">
+      {% for item in collections.articles %}
+        {% include "components/guide-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

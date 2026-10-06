@@ -1,0 +1,98 @@
+.page-content form input:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=file]):not(.form-control):not(.form-check-input):not(.form-select),
+.page-content form textarea:not(.form-control),
+.page-content form select:not(.form-select):not(.form-control) {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--#{$prefix}border-color);
+    border-radius: $border-radius;
+    background-color: $input-bg;
+    color: $input-color;
+}
+
+.page-content .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--#{$prefix}border-color);
+}
+
+.page-content table:not(.table) {
+    width: 100%;
+    background: $card-bg;
+}
+
+.page-content table:not(.table) th,
+.page-content table:not(.table) td {
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid var(--#{$prefix}border-color);
+}
+
+.guides-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.guides-media-tile {
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.guides-media-tile.is-selected {
+    border-color: $primary;
+}
+
+.media-library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+    max-height: 420px;
+    overflow: auto;
+}
+
+.media-library-grid .media-item {
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    background: #f8f9fa;
+}
+
+.media-library-grid .media-item.is-selected {
+    border-color: $primary;
+}
+
+.media-library-grid img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+}
+
+.post-wp-subnav a {
+    margin-right: 0.75rem;
+}
+
+.seo-serp-preview {
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 600px;
+}
+
+.seo-serp-title {
+    color: #1a0dab;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.seo-serp-url {
+    color: #006621;
+    font-size: 14px;
+}
+
+.seo-serp-desc {
+    color: #545454;
+    font-size: 14px;
+}

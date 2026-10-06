@@ -1,0 +1,6 @@
+<a class="category-tile" href="/{{ cat.slug }}/">
+  <div class="icon" aria-hidden="true">{% include "components/icon.njk" %}</div>
+  <h3>{{ cat.title }}</h3>
+  <p>{{ cat.description }}</p>
+  <span class="count">Explore {{ cat.title | lower }}</span>
+</a>

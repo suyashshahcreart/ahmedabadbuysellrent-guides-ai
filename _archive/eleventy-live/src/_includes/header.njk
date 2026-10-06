@@ -1,0 +1,20 @@
+<header class="site-header{% if overlayHeader %} is-overlay{% endif %}">
+  <div class="container header-inner">
+    <a class="wordmark" href="/">
+      {{ site.shortName }}
+      <span>Buy · Rent · Sell</span>
+    </a>
+    <form class="header-search" action="/search/" method="get" role="search">
+      <label class="visually-hidden" for="header-q">Search guides</label>
+      <input id="header-q" name="q" type="search" placeholder="Search guides" autocomplete="off">
+    </form>
+    <nav class="nav-desktop" aria-label="Primary">
+      {% for item in nav %}
+      <a href="{{ item.href }}"{% if item.href != '/' and page.url.indexOf(item.href) == 0 %} class="is-active"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+    <a class="btn btn-navy header-cta" href="{{ site.marketplaceUrl }}/buy">Explore properties</a>
+    <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
+  </div>
+  {% include "mobile-menu.njk" %}
+</header>

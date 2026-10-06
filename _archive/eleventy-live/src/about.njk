@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: About Ahmedabad Property Guides
+description: "How Ahmedabad Guides helps buyers, renters and sellers understand localities, documents and decisions — then find listings on Ahmedabad Buy Sell Rent."
+canonical: /about/
+---
+<section class="hero hero-compact">
+  <div class="container">
+    {% set crumbs = [{ label: "About" }] %}
+    {% include "components/breadcrumbs.njk" %}
+    <p class="eyebrow">{{ site.org }}</p>
+    <h1>Guides for people making property decisions in Ahmedabad</h1>
+    <p class="lede">This site is the knowledge layer for {{ site.org }}: locality context, checklists, and comparisons — written so you can act with a clearer picture of the area around a property.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container content prose-page">
+    <h2>What you will find here</h2>
+    <p>Practical guides for buying, renting and selling; zone and locality notes; and side-by-side comparisons of neighborhoods people actually search for.</p>
+    <h2>How this relates to listings</h2>
+    <p>When you are ready to look at homes, <a href="{{ site.marketplaceUrl }}/">{{ site.org }}</a> carries properties for sale and rent. For the geographic directory of zones, neighborhoods and landmarks, see <a href="{{ site.referenceUrl }}/areas/">the city reference</a>.</p>
+    <h2>Editorial approach</h2>
+    <p>We do not invent ratings or guaranteed prices. Market notes are directional. Always verify title, society records and current asking prices with professionals before you pay a token.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">{% include "components/cta-section.njk" %}</div>
+</section>

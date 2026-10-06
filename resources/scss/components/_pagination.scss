@@ -1,0 +1,81 @@
+//
+// pagination.scss — Velzon list footers (Laravel Bootstrap 5)
+//
+.page-link {
+    i {
+        vertical-align: middle;
+    }
+}
+
+.pagination-rounded {
+    .page-link {
+        border-radius: 3px !important;
+        margin: 0 3px;
+        border: none;
+    }
+}
+
+.admin-list-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    border-top: 1px solid var(--bs-border-color);
+    background: var(--bs-secondary-bg);
+}
+
+.admin-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: 100%;
+
+    .pagination {
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+
+    .page-link {
+        min-width: 2rem;
+        height: 2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.45rem;
+        font-size: 0.8125rem;
+        line-height: 1;
+        color: var(--bs-body-color);
+        background-color: var(--bs-secondary-bg);
+        border: 1px solid var(--bs-border-color);
+        border-radius: 0.35rem !important;
+        margin: 0 0.15rem;
+    }
+
+    .page-item:not(.disabled):not(.active) .page-link:hover {
+        color: var(--bs-primary);
+        background-color: var(--bs-tertiary-bg);
+        border-color: var(--bs-primary);
+    }
+
+    .page-item.active .page-link {
+        color: #fff;
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
+    }
+
+    .page-item.disabled .page-link {
+        opacity: 0.45;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .admin-pagination {
+        justify-content: center;
+        text-align: center;
+    }
+}

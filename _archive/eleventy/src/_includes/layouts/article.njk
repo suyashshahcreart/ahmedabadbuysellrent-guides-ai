@@ -1,0 +1,73 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+{% set headings = content | headings %}
+{% set related = collections.articles | relatedTo(page.fileSlug, category) %}
+{% set pn = collections.articles | prevNext(page.url) %}
+{% set crumbs = [{ href: "/" + category + "/", label: category | categoryLabel(categories) }, { label: title }] %}
+<div class="reading-progress" data-progress aria-hidden="true"></div>
+<article class="article-page" data-pagefind-body data-pagefind-meta="title:{{ title }}" data-pagefind-filter="category:{{ category }}">
+  <header class="article-hero">
+    <div class="container">
+      {% include "components/breadcrumbs.njk" %}
+      <p class="eyebrow">{{ category | categoryLabel(categories) }}</p>
+      <h1>{{ title }}</h1>
+      {% if description %}<p class="lede">{{ description }}</p>{% endif %}
+      <div class="article-meta">
+        <span>{{ author or site.author }}</span>
+        <span>Published <time datetime="{{ page.date | isoDate }}">{{ page.date | displayDate }}</time></span>
+        {% if updated %}<span>Updated <time datetime="{{ updated | isoDate }}">{{ updated | displayDate }}</time></span>{% endif %}
+        {% if readingTime %}<span>{{ readingTime }} min read</span>{% endif %}
+      </div>
+    </div>
+    {% if image %}
+    <div class="article-hero-image container">
+      <img src="{{ image }}" alt="{{ imageAlt or title }}" width="1120" height="560" fetchpriority="high">
+    </div>
+    {% endif %}
+  </header>
+  <div class="article-layout container">
+    <aside class="article-sidebar">
+      <details class="toc-mobile">
+        <summary>On this page</summary>
+        {% include "components/toc.njk" %}
+      </details>
+      <div class="toc-desktop">
+        {% include "components/toc.njk" %}
+      </div>
+      {% include "components/share-buttons.njk" %}
+    </aside>
+    <div class="article-body content">
+      {{ content | safe }}
+      <div class="article-inline-cta">
+        {% include "components/cta-section.njk" %}
+      </div>
+    </div>
+  </div>
+  {% include "components/related-guides.njk" %}
+  <div class="container">
+    {% include "components/prev-next.njk" %}
+  </div>
+</article>
+{% set jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": image,
+  "datePublished": page.date | isoDate,
+  "dateModified": (updated or page.date) | isoDate,
+  "author": { "@type": "Organization", "name": author or site.author },
+  "publisher": { "@type": "Organization", "name": site.org, "url": site.referenceUrl }
+} %}
+<script type="application/ld+json">{{ jsonLd | json | safe }}</script>
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url + "/" },
+    { "@type": "ListItem", "position": 2, "name": category | categoryLabel(categories), "item": site.url + "/" + category + "/" },
+    { "@type": "ListItem", "position": 3, "name": title, "item": (page.url) | absolute(site) }
+  ]
+} | json | safe }}</script>

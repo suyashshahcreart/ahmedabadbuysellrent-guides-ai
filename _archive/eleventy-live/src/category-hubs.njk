@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+permalink: "{{ category.slug }}/index.html"
+pagination:
+  data: categories
+  size: 1
+  alias: category
+eleventyComputed:
+  title: "{{ category.title }} in Ahmedabad"
+  description: "{{ category.description }}"
+  canonical: "/{{ category.slug }}/"
+---
+{% set items = collections.articles | byCategory(category.slug) %}
+<section class="hero hero-compact">
+  <div class="container">
+    <p class="eyebrow">{{ site.shortName }}</p>
+    <h1>{{ category.title }}</h1>
+    <p class="lede">{{ category.description }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-navy" href="{{ site.marketplaceUrl }}/{{ 'rent' if category.slug == 'rent' else 'buy' }}">Browse properties</a>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    {% if category.slug == "areas" %}
+    <div class="locality-grid" style="margin-bottom:32px">
+      {% for zone in zones %}
+      <a class="locality-card" href="/areas/{{ zone.slug }}/">
+        <div class="thumb"><img src="{{ zone.image }}" alt="{{ zone.imageAlt }}" loading="lazy" width="640" height="360"></div>
+        <div class="body">
+          <h3>{{ zone.name }}</h3>
+          <p>{{ zone.summary }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if items.length %}
+    <div class="card-grid{% if items.length > 2 %} cols-3{% endif %}">
+      {% for item in items %}
+        {% include "components/guide-card.njk" %}
+      {% endfor %}
+    </div>
+    {% elif category.slug != "areas" %}
+    <div class="empty-state">
+      <h2>Guides are being prepared</h2>
+      <p>New {{ category.title | lower }} will appear here. Browse <a href="/guides/">all guides</a> in the meantime.</p>
+    </div>
+    {% endif %}
+    <div class="container-cta">
+      {% include "components/cta-section.njk" %}
+    </div>
+  </div>
+</section>

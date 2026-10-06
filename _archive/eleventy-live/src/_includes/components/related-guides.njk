@@ -1,0 +1,10 @@
+<section class="related-guides">
+  <div class="container">
+    <h2>Related guides</h2>
+    <div class="card-grid cols-3" style="margin-top:16px">
+      {% for item in related %}
+        {% include "components/guide-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

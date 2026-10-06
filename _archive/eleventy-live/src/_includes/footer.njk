@@ -1,0 +1,41 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <div>
+        <h2>{{ site.shortName }}</h2>
+        <p>Property guides for buying, renting and selling in Ahmedabad. Part of {{ site.org }}.</p>
+      </div>
+      <div>
+        <h2>Guides</h2>
+        <ul>
+          {% for cat in categories %}
+          <li><a href="/{{ cat.slug }}/">{{ cat.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2>Popular locations</h2>
+        <ul>
+          {% for zone in zones %}
+          <li><a href="/areas/{{ zone.slug }}/">{{ zone.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2>{{ site.org }}</h2>
+        <ul>
+          <li><a href="{{ site.marketplaceUrl }}/buy">Buy</a></li>
+          <li><a href="{{ site.marketplaceUrl }}/rent">Rent</a></li>
+          <li><a href="{{ site.marketplaceUrl }}/list">List a property</a></li>
+          <li><a href="{{ site.marketplaceUrl }}/contact">Contact</a></li>
+          <li><a href="{{ site.referenceUrl }}/areas/">City areas</a></li>
+          <li><a href="{{ site.referenceUrl }}/places/">Places</a></li>
+          <li><a href="/about/">About these guides</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>© {% year %} {{ site.org }} · {{ site.url | replace("https://", "") }}</p>
+    </div>
+  </div>
+</footer>

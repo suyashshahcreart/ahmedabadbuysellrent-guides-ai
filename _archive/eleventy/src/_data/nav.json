@@ -1,0 +1,8 @@
+[
+  { "href": "/buy/", "label": "Buy", "match": "buy" },
+  { "href": "/rent/", "label": "Rent", "match": "rent" },
+  { "href": "/sell/", "label": "Sell", "match": "sell" },
+  { "href": "/areas/", "label": "Areas", "match": "areas" },
+  { "href": "/compare/", "label": "Compare", "match": "compare" },
+  { "href": "/guides/", "label": "All guides", "match": "guides" }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "ahmedabad-guides",
+  "private": true,
+  "scripts": {
+    "build": "eleventy && pagefind --site public --output-subdir pagefind",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it": "^15.0.2",
+    "markdown-it-anchor": "^10.0.0",
+    "pagefind": "^1.5.2"
+  }
+}

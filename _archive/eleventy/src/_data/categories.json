@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "buy",
+    "title": "Buying guides",
+    "nav": "Buy",
+    "tag": "Buying",
+    "icon": "home",
+    "description": "First-time buyer checklists, budget planning, and what to look for in Ahmedabad apartments and bungalows.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "rent",
+    "title": "Renting guides",
+    "nav": "Rent",
+    "tag": "Renting",
+    "icon": "key",
+    "description": "Where to rent, typical deposits, and how to evaluate a locality before you sign a lease.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "sell",
+    "title": "Selling guides",
+    "nav": "Sell",
+    "tag": "Selling",
+    "icon": "document",
+    "description": "Pricing, documentation, and how to present your property to buyers in Ahmedabad.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "home-loans",
+    "title": "Home loans",
+    "nav": "Loans",
+    "tag": "Home loans",
+    "icon": "bank",
+    "description": "Pre-approval, EMI planning, and how home loans work for buyers in Gujarat.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "legal",
+    "title": "Legal & documentation",
+    "nav": "Legal",
+    "tag": "Legal",
+    "icon": "scale",
+    "description": "Title search, stamp duty, society NOC, and registration steps in Ahmedabad.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "investment",
+    "title": "Property investment",
+    "nav": "Invest",
+    "tag": "Investment",
+    "icon": "chart",
+    "description": "Yield, appreciation corridors, and how to evaluate an Ahmedabad investment.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "compare",
+    "title": "Comparisons",
+    "nav": "Compare",
+    "tag": "Compare",
+    "icon": "scale",
+    "description": "Side-by-side locality comparisons to help you choose between two neighborhoods.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "areas",
+    "title": "Ahmedabad locality guides",
+    "nav": "Areas",
+    "tag": "Area",
+    "icon": "pin",
+    "description": "Zone-by-zone breakdowns: connectivity, lifestyle, price bands, and who each area suits.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "interior",
+    "title": "Home & interior",
+    "nav": "Interior",
+    "tag": "Interior",
+    "icon": "lamp",
+    "description": "How to evaluate finishes, layout, and fit-out quality before you buy or rent.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "market",
+    "title": "Real estate market",
+    "nav": "Market",
+    "tag": "Market",
+    "icon": "trend",
+    "description": "Ahmedabad market context: sale prices, rents, and what is moving where.",
+    "countLabel": "guides"
+  },
+  {
+    "slug": "nri",
+    "title": "NRI property guide",
+    "nav": "NRI",
+    "tag": "NRI",
+    "icon": "globe",
+    "description": "Buying, renting out, and managing property in Ahmedabad from overseas.",
+    "countLabel": "guides"
+  }
+]

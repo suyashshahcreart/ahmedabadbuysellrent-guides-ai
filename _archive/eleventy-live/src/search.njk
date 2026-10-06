@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Search guides
+description: "Search Ahmedabad property guides for buying, renting, selling, localities, loans and legal topics."
+canonical: /search/
+---
+<section class="hero hero-compact">
+  <div class="container">
+    <p class="eyebrow">Search</p>
+    <h1>Search guides</h1>
+    <p class="lede">Find advice on buying, renting, selling, home loans, localities and more.</p>
+    <div class="search-box">
+      <form id="pagefind-form" action="/search/" method="get" role="search">
+        <input id="pagefind-input" name="q" type="search" placeholder="Search: first-time buyer, Thaltej, NRI…" aria-label="Search guides">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="filters" data-search-filters>
+      <button type="button" class="is-on" data-filter="">All</button>
+      {% for cat in categories %}
+      <button type="button" data-filter="{{ cat.slug }}">{{ cat.nav }}</button>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="search-status" data-search-status></div>
+    <div class="skeleton-grid" data-search-skeleton hidden>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+    <div class="card-grid cols-3" data-search-results></div>
+    <div class="empty-state" data-search-empty hidden>
+      <h2>No guides found</h2>
+      <p>Try a broader term, or browse <a href="/guides/">all guides</a> and <a href="/areas/">area guides</a>.</p>
+    </div>
+  </div>
+</section>
+    <script src="/pagefind/pagefind-ui.js"></script>

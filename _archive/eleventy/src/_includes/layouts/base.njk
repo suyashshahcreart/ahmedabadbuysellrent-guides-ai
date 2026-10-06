@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title | default(site.name) }}{% if title %} | {{ site.shortName }}{% endif %}</title>
+  <meta name="description" content="{{ description | default(site.description) }}">
+  <link rel="canonical" href="{{ (canonical or page.url) | absolute(site) }}">
+  {% if site.noindex %}
+  <meta name="robots" content="noindex, nofollow">
+  {% else %}
+  <meta name="robots" content="index, follow">
+  {% endif %}
+  <meta property="og:title" content="{{ ogTitle or title or site.name }}">
+  <meta property="og:description" content="{{ description | default(site.description) }}">
+  <meta property="og:url" content="{{ (canonical or page.url) | absolute(site) }}">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  {% if image %}
+  <meta property="og:image" content="{{ image }}">
+  {% endif %}
+  <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}">
+  <meta name="twitter:title" content="{{ ogTitle or title or site.name }}">
+  <meta name="twitter:description" content="{{ description | default(site.description) }}">
+  {% if image %}
+  <meta name="twitter:image" content="{{ image }}">
+  {% endif %}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css?v={{ site.assetVersion }}">
+  {% if extraHead %}{{ extraHead | safe }}{% endif %}
+  {% if jsonLd %}
+  <script type="application/ld+json">{{ jsonLd | json | safe }}</script>
+  {% endif %}
+</head>
+<body class="{{ bodyClass or '' }}">
+  {% include "header.njk" %}
+  <main>
+    {{ content | safe }}
+  </main>
+  {% include "footer.njk" %}
+  <script src="/js/site.js?v={{ site.assetVersion }}"></script>
+  {% if extraScripts %}{{ extraScripts | safe }}{% endif %}
+</body>
+</html>

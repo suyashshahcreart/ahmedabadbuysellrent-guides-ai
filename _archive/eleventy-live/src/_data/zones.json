@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "new-west-zone",
+    "name": "New West Zone",
+    "short": "High-rises, offices, malls",
+    "tags": ["Connectivity", "Investment", "Lifestyle"],
+    "summary": "Bodakdev, Vastrapur, Thaltej, Gota and the SG Highway corridor.",
+    "image": "/assets/photos/sg-highway.jpg",
+    "imageAlt": "SG Highway skyline"
+  },
+  {
+    "slug": "west-zone",
+    "name": "West Zone",
+    "short": "Campuses and high streets",
+    "tags": ["Schools", "Shopping", "Lifestyle"],
+    "summary": "Navrangpura, Paldi, Ashram Road and CG Road — the established west bank.",
+    "image": "/assets/photos/sabarmati.jpg",
+    "imageAlt": "Sabarmati river"
+  },
+  {
+    "slug": "central-zone",
+    "name": "Central Zone",
+    "short": "Walled city and pols",
+    "tags": ["Heritage", "Markets"],
+    "summary": "The historic core: Kalupur, Khadia, Dariyapur and the old-city bazaars.",
+    "image": "/assets/photos/pols.jpg",
+    "imageAlt": "Old city pols"
+  },
+  {
+    "slug": "north-zone",
+    "name": "North Zone",
+    "short": "River and Gandhinagar road",
+    "tags": ["Connectivity", "Lifestyle"],
+    "summary": "Sabarmati, Chandkheda, Motera — along the river toward Gandhinagar.",
+    "image": "/assets/photos/ashram.jpg",
+    "imageAlt": "Sabarmati Ashram"
+  },
+  {
+    "slug": "south-zone",
+    "name": "South Zone",
+    "short": "Transit and mixed belts",
+    "tags": ["Hospitals", "Connectivity"],
+    "summary": "Maninagar, Isanpur, Vatva — south of the riverbed.",
+    "image": "/assets/photos/kankaria.jpg",
+    "imageAlt": "Kankaria Lake"
+  },
+  {
+    "slug": "east-zone",
+    "name": "East Zone",
+    "short": "Mill lands and mixed use",
+    "tags": ["Rental", "Value"],
+    "summary": "Former mill lands and workers' colonies, now mixed commercial and residential.",
+    "image": "/assets/photos/junction.jpg",
+    "imageAlt": "Ahmedabad Junction"
+  },
+  {
+    "slug": "south-east-zone",
+    "name": "South-East Zone",
+    "short": "Expanding suburbs",
+    "tags": ["Investment", "Value"],
+    "summary": "Nikol, Vastral and large-scale housing growth along major arterials.",
+    "image": "/assets/photos/riverfront.jpg",
+    "imageAlt": "Sabarmati riverfront"
+  }
+]

@@ -1,0 +1,10 @@
+<nav id="site-nav" class="nav-mobile" data-nav-mobile aria-label="Mobile">
+  <div class="container">
+    {% for item in nav %}
+    <a href="{{ item.href }}">{{ item.label }}</a>
+    {% endfor %}
+    <a href="/search/">Search</a>
+    <a href="/about/">About</a>
+    <a href="{{ site.marketplaceUrl }}/buy">Explore properties</a>
+  </div>
+</nav>

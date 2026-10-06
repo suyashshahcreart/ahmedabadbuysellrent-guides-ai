@@ -1,0 +1,40 @@
+// DataTables 3 + Bootstrap 5 (Proppik-style list chrome)
+div.dt-container {
+    .dt-length label {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-bottom: 0;
+        font-size: 0.8125rem;
+        color: var(--bs-secondary-color);
+        font-weight: 500;
+    }
+
+    .dt-search input {
+        min-width: 16rem;
+        height: 36px;
+    }
+
+    .dt-info {
+        font-size: 0.8125rem;
+        color: var(--bs-secondary-color);
+        padding-top: 0.5rem;
+    }
+
+    .dt-paging .page-item .page-link {
+        min-width: 2rem;
+        height: 2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.45rem;
+        margin: 0 0.12rem;
+        border-radius: 0.35rem;
+    }
+
+    table.dataTable thead th {
+        white-space: nowrap;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+}

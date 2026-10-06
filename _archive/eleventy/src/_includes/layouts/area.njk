@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+<section class="hero hero-compact">
+  <div class="container">
+    {% set crumbs = [{ href: "/areas/", label: "Areas" }, { label: title }] %}
+    {% include "components/breadcrumbs.njk" %}
+    <p class="eyebrow">Locality guide</p>
+    <h1>{{ title }}</h1>
+    <p class="lede">{{ description }}</p>
+    <p class="locality-tags">{% for t in zoneTags %}<span>{{ t }}</span>{% endfor %}</p>
+  </div>
+</section>
+{% if image %}
+<div class="container article-hero-image">
+  <img src="{{ image }}" alt="{{ imageAlt or title }}" width="1120" height="480" loading="eager">
+</div>
+{% endif %}
+<section class="section">
+  <div class="container article-layout">
+    <div class="article-body content" data-pagefind-body>
+      {{ content | safe }}
+      <p><a href="{{ site.referenceUrl }}/areas/{{ slug }}/">Full neighborhood directory on {{ site.referenceUrl | replace("https://", "") }}</a></p>
+    </div>
+  </div>
+  <div class="container">{% include "components/cta-section.njk" %}</div>
+</section>

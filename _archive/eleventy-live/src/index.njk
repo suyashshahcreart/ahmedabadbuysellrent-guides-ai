@@ -1,0 +1,220 @@
+---
+layout: layouts/base.njk
+title: Ahmedabad Property Guides
+description: "Your trusted guide to buying, selling and renting property in Ahmedabad. Locality reviews, comparisons, and practical advice."
+canonical: /
+overlayHeader: true
+bodyClass: page-home
+---
+{% set featured = collections.articles | featured | take(3) %}
+{% set trending = collections.articles | trending | take(6) %}
+{% set latest = collections.articles | take(5) %}
+
+<section class="hero hero-home">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow">Ahmedabad</p>
+      <h1>Your trusted guide to <em>buying, selling and renting</em> property in Ahmedabad.</h1>
+      <p class="lede">Locality reviews, comparisons, and practical advice for the city’s seven municipal zones — from the walled city to SG Highway.</p>
+      <div class="search-box">
+        <form action="/search/" method="get" role="search">
+          <label class="visually-hidden" for="hero-q">Search guides</label>
+          <input id="hero-q" name="q" type="search" placeholder="Search: Bodakdev, rent, home loans…" autocomplete="off">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-navy" href="/guides/">Explore guides</a>
+        <a class="btn btn-outline" href="{{ site.marketplaceUrl }}/buy">Explore properties</a>
+      </div>
+      <div class="hero-stat-bar">
+        <div class="hero-stat"><strong>{{ collections.articles.length }}+</strong><span>Property guides</span></div>
+        <div class="hero-stat"><strong>7</strong><span>Municipal zones</span></div>
+        <div class="hero-stat"><strong>10</strong><span>Guide categories</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <a class="hero-float-card card-main" href="/guides/new-west-zone/">
+          <img src="/assets/photos/sg-highway.jpg" alt="SG Highway, Ahmedabad" width="640" height="360">
+          <div class="card-label"><span>Area guide</span><strong>New West Zone</strong></div>
+        </a>
+        <a class="hero-float-card card-secondary" href="/compare/bodakdev-vs-satellite/">
+          <img src="/assets/photos/iim.jpg" alt="IIM Ahmedabad campus" width="640" height="360">
+          <div class="card-label"><span>Comparison</span><strong>Bodakdev vs Satellite</strong></div>
+        </a>
+      </div>
+      <div class="hero-visual-mobile">
+        <a href="/guides/new-west-zone/">
+          <img src="/assets/photos/sg-highway.jpg" alt="SG Highway in Ahmedabad" width="640" height="360">
+          <span>New West Zone</span>
+        </a>
+        <a href="/compare/bodakdev-vs-satellite/">
+          <img src="/assets/photos/iim.jpg" alt="IIM Ahmedabad campus" width="640" height="360">
+          <span>Bodakdev vs Satellite</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="container trust-grid">
+    <p><strong>Ahmedabad-focused</strong> Local zones, not generic advice.</p>
+    <p><strong>Updated guides</strong> Practical steps for buyers, tenants and sellers.</p>
+    <p><strong>Linked listings</strong> From a guide to properties on {{ site.org }}.</p>
+    <p><strong>Clear comparisons</strong> Choose between localities with context.</p>
+  </div>
+</section>
+
+<section class="section section-warm">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Popular categories</h2>
+        <div class="accent-line"></div>
+        <p class="section-intro">Start with the decision you are making, then drill into the area that matters.</p>
+      </div>
+    </div>
+    <div class="category-grid">
+      {% for cat in categories %}
+        {% include "components/category-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Featured guides</h2>
+        <div class="accent-line"></div>
+        <p class="section-intro">The guides people read first when moving to or within Ahmedabad.</p>
+      </div>
+      <a class="link-text" href="/guides/">See all guides</a>
+    </div>
+    <div class="card-grid cols-3">
+      {% for item in featured %}
+        {% set variant = "featured" %}
+        {% include "components/guide-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Trending guides</h2>
+        <div class="accent-line"></div>
+        <p class="section-intro">Currently popular reading on buying, renting and localities.</p>
+      </div>
+    </div>
+    <div class="card-grid cols-3 trending-row">
+      {% for item in trending %}
+        {% set variant = "compact" %}
+        {% include "components/guide-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-locality">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Ahmedabad locality guides</h2>
+        <div class="accent-line"></div>
+        <p class="section-intro">Seven municipal zones with property context: connectivity, lifestyle, schools, and who each area suits.</p>
+      </div>
+      <a class="link-text" href="/areas/">All area guides</a>
+    </div>
+    <div class="locality-grid">
+      {% for zone in zones %}
+      <a class="locality-card{% if loop.first %} is-lead{% endif %}" href="/areas/{{ zone.slug }}/">
+        <div class="thumb">
+          <img src="{{ zone.image }}" alt="{{ zone.imageAlt }}" loading="lazy" width="640" height="360">
+          <span class="zone-num">{% if loop.index < 10 %}0{{ loop.index }}{% else %}{{ loop.index }}{% endif %}</span>
+          <h3>{{ zone.name }}</h3>
+        </div>
+        <div class="body">
+          <p>{{ zone.summary }}</p>
+          <p class="locality-tags">{% for t in zone.tags %}<span>{{ t }}</span>{% endfor %}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Latest articles</h2>
+        <div class="accent-line"></div>
+      </div>
+      <a class="link-text" href="/guides/">All guides</a>
+    </div>
+    <div class="latest-layout">
+      {% if latest[0] %}
+        {% set item = latest[0] %}
+        {% set variant = "featured" %}
+        {% include "components/guide-card.njk" %}
+      {% endif %}
+      <div class="latest-stack">
+        {% for item in latest | skip(1) %}
+          {% set variant = "compact" %}
+          {% include "components/guide-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-warm">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Real estate market insights</h2>
+        <div class="accent-line"></div>
+        <p class="section-intro">Directional context for Ahmedabad — not live quotes. Read the full market notes for more.</p>
+      </div>
+      <a class="link-text" href="/market/">Market guides</a>
+    </div>
+    <div class="insight-grid">
+      {% for insight in insights %}
+      <article class="insight-card">
+        <p class="tag">{{ insight.label }}</p>
+        <p class="insight-stat">{{ insight.stat }}</p>
+        <h3>{{ insight.title }}</h3>
+        <p>{{ insight.body }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% include "components/newsletter.njk" %}
+    {% include "components/cta-section.njk" %}
+  </div>
+</section>
+
+{% set jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": site.name,
+  "url": site.url + "/",
+  "description": site.description,
+  "publisher": { "@type": "Organization", "name": site.org, "url": site.referenceUrl },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": site.url + "/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+} %}
+<script type="application/ld+json">{{ jsonLd | json | safe }}</script>

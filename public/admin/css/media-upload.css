@@ -1,0 +1,112 @@
+/* Upload Dropzone */
+#upload-dropzone {
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#upload-dropzone.dragover {
+    border-color: #0073aa;
+    background: #f0f6fc;
+}
+
+#upload-dropzone:hover {
+    border-color: #0073aa;
+}
+
+/* Progress Container */
+#upload-progress {
+    display: none;
+    margin-top: 1rem;
+}
+
+#upload-progress-bar {
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+#upload-progress-bar .progress {
+    height: 100%;
+    background: #0073aa;
+    transition: width 0.3s ease;
+}
+
+#upload-status {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* File List */
+#upload-file-list {
+    margin-top: 1rem;
+}
+
+.upload-file-item {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    background: #fff;
+}
+
+.upload-file-item.error {
+    border-color: #dc3232;
+    background: #fef7f7;
+}
+
+.file-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.filename {
+    font-weight: 500;
+}
+
+.filesize {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.file-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.file-progress .progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.file-progress .progress {
+    height: 100%;
+    background: #0073aa;
+    transition: width 0.3s ease;
+}
+
+.file-progress .status {
+    font-size: 0.9rem;
+    color: #666;
+    min-width: 100px;
+    text-align: right;
+}
+
+.upload-file-item.error .file-progress .progress {
+    background: #dc3232;
+}
+
+.upload-file-item.error .status {
+    color: #dc3232;
+}

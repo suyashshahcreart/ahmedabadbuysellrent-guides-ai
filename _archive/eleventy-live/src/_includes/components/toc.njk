@@ -1,0 +1,10 @@
+{% if headings.length %}
+<nav class="toc" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ol>
+    {% for h in headings %}
+    <li><a href="#{{ h.id }}">{{ h.text }}</a></li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}

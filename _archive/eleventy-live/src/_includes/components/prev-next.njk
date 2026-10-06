@@ -1,0 +1,10 @@
+{% if pn.prev or pn.next %}
+<nav class="prev-next" aria-label="More articles">
+  {% if pn.prev %}
+  <a class="prev-next-card" href="{{ pn.prev.url }}"><span>Previous</span><strong>{{ pn.prev.data.title }}</strong></a>
+  {% else %}<span></span>{% endif %}
+  {% if pn.next %}
+  <a class="prev-next-card" href="{{ pn.next.url }}"><span>Next</span><strong>{{ pn.next.data.title }}</strong></a>
+  {% endif %}
+</nav>
+{% endif %}

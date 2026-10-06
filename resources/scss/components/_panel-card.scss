@@ -1,0 +1,50 @@
+.panel-card {
+    position: relative;
+
+    &.card-fullscreen,
+    &.panel-card-fullscreen {
+        position: fixed !important;
+        inset: 1.5rem;
+        width: auto;
+        height: auto;
+        z-index: 1055;
+        background: var(--bs-body-bg, #fff);
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .15);
+    }
+
+    &.card-fullscreen .card-body,
+    &.panel-card-fullscreen .card-body {
+        overflow: auto;
+        max-height: calc(100vh - 8rem);
+    }
+
+    .panel-actions {
+        .btn {
+            padding: .35rem;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .panel-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(255, 255, 255, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+    }
+
+    .changes-container {
+        font-size: 0.875rem;
+
+        .border {
+            border-color: #dee2e6 !important;
+        }
+    }
+}
